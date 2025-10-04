@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<div>
+    <header>
+        <h1>Company Homepage</h1>
+    </header>
+    <section>
+        <p>
+            the current date and time is: (get the date and time)
+        <br><br>
+            There are 3 items of invertory. <br>
+        <ul>
+            {% for item in items %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <h4>
+            Thank You For Visiting.
+        </h4>
+        </p>
+    </section>
+</div>
+
+{% endblock content %}

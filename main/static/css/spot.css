@@ -1,0 +1,23 @@
+body.noPage {
+    color: #898989;
+    background-color: #0c0c0c;
+    z-index: 1;
+}
+.noPageItem {
+    text-align: center;
+    position: relative;
+    top: 60px;
+    font-size: 100px;
+    z-index: 1;
+}
+.torch {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 150px;
+    /* this is what removes the overlay */
+    box-shadow: 0 0 30px 9999px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+}

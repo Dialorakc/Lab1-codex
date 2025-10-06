@@ -1,9 +1,29 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<div>
+<div class="about">
     <p>
         Made by a solo dev, who likes javascript
     </p>
+    <div class="tracer"></div>
+
+    <script>
+        document.addEventListener( 'mousemove', function(e) {
+            const tracer = document.createElement('div')
+            tracer.className = 'tracer'
+
+            tracer.style.left = e.clientX + 'px'
+            tracer.style.top = e.clientY + 'px'
+
+            // this adds tracer
+            document.body.appendChild(tracer)
+            console.log('tracer started')
+
+            // timer
+            setTimeout(function() {
+                tracer.remove()
+            }, 500)
+        })
+    </script>
 </div>
 {% endblock content %}

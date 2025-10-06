@@ -1,5 +1,24 @@
 {% extends 'index.html' %}
+{% load static %}
+
+{% block extraStyles %}
+<link rel="stylesheet" href="{% static 'css/spot.css' %}">
+{% endblock extraStyles %}
 
 {% block content %}
-<h3>Page not found</h3>
+    <div class="{% block bodyClass %}noPage{% endblock %}">
+        <h3 class="noPageItem">Page not found</h3>
+        <div class="overlay"></div>
+        <div class="torch" id="torch"></div>
+
+        <script>
+            const spot = document.getElementById("torch")
+
+            /* it's similar to the one you did in qml */
+            document.addEventListener('mousemove', function(e) {
+                spot.style.left = e.clientX + 'px'
+                spot.style.top = e.clientY + 'px'
+            })
+        </script>
+    </div>
 {% endblock %}

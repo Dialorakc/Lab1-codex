@@ -1,0 +1,224 @@
+.back {
+    color: #ffffff;
+    background-color: #738772/*#95cb57*/;
+    overflow: auto;
+    min-height: 100vh;
+}
+
+/* about page */
+.about {
+    position: relative;
+    text-align: center;
+    font-size: 60px;
+    top: 150px;
+    text-shadow: 10px 10px 0 #0e0e0e;
+}
+.tracer {
+    background-color: #ffffff;
+    position: fixed;
+    width: 10px;
+    height: 6px;
+    pointer-events: none;
+    box-shadow: 10px 10px 0 0 #0e0e0e;
+}
+
+/* nav bar */
+.nav {
+    background-color: #b3b749;
+    padding: 10px 10px;
+    box-shadow: 12px 10px 0 0 #0e0e0e;
+}
+.input {
+    color: #000000;
+    background-color: #ddffcd;
+    width: 180px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+/* switcher */
+button {
+    color: #ffffff;
+    background-color: #cba657;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+/* home page */
+.compHead {
+    color: #ffffff;
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    top: 100px;
+    text-shadow: 0 0 10px #ffff00;
+}
+.round {
+    position: absolute;
+    top: -2500%;
+    left: -3%;
+    background-color: #3c3c3c;
+    height: 2000px;
+    width: 2000px;
+    border-radius: 2000%;
+    z-index: -5;
+}
+.info {
+    font-size: 20px;
+    position: relative;
+    top: 400px;
+    left: 10%;
+    background-color: #2d2d2d;
+    height: 100px;
+    width: 600px;
+    padding: 50px 50px;
+    border-radius: 50px;
+    outline: 5px dashed #edda5d;
+    outline-offset: 10px;
+}
+.endMsg {
+    position: absolute;
+    top: 120%;
+    left: 10%;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+/* cards */
+.container {
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    background-color: #2d2d2d;
+    border-radius: 50px;
+    top: 80%;
+    left: 55%;
+    outline: 4px dashed #edda5d;
+    outline-offset: 8px;
+    z-index: 5;
+}
+.container::after {
+    content: '';
+    position: absolute;
+    bottom: -300px;
+    background-color: #738772;
+    z-index: 10;
+    height: 300px;
+    width: 526px;
+    left: 45px;
+}
+.cards {
+    position: absolute;
+    height: 400px;
+    width: 70%;
+    background-color: #ffffff;
+    border: 2px solid #22ffad;
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 30px 30px;
+    transition: all 0.3s ease;
+}
+.card-1 {
+    top: 60px;
+    left: 10%;
+    color: #ffffff;
+    background-color: #ef0a0a;
+    z-index: 3;
+}
+.card-2 {
+    top: 22px;
+    left: 8%;
+    color: #ffffff;
+    background-color: #23aa0a;
+    z-index: 2;
+}
+.card-3 {
+    top: -23px;
+    left: 12%;
+    color: #000000;
+    background-color: #33ed21;
+    z-index: 1;
+}
+.card-1:hover {
+    transform: translateY(-80px);
+    cursor: pointer;
+    opacity: 0.8;
+}
+.card-2:hover {
+    transform: translateY(-80px);
+    cursor: pointer;
+    opacity: 0.8;
+}
+.card-3:hover {
+    transform: translateY(-80px);
+    cursor: pointer;
+    opacity: 0.8;
+}
+.card-1:hover ~ .card-2,
+.card-1:hover ~ .card-3,
+.card-2:hover ~ .card-3,
+.card-3:hover ~ .card-2 {
+    transform: translateY(-80px);
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* animations */
+@keyframes floata {
+    from {
+        transform: translateY(500%)
+    }
+    to {
+        transform: translateY(-520%)
+    }
+}
+@keyframes floatb {
+    from {
+        transform: translateY(200%)
+    }
+    to {
+        transform: translateY(-180%)
+    }
+}
+@keyframes float {
+    from {
+        transform: translateY(80%)
+    }
+    to {
+        transform: translateY(-120%)
+    }
+}
+
+.floatA {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    background-color: #566855;
+    animation: floata 10s ease-out infinite;
+    margin-left: 10%;
+    z-index: -15;
+}
+.floatB {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+    background-color: #495b48;
+    animation: floatb 20s ease-in-out infinite;
+    margin-left: 30%;
+    z-index: -15;
+}
+.floatC {
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 1000px;
+    background-color: #637762;
+    animation: float 16s ease infinite;
+    margin-left: 90%;
+    z-index: -15;
+}

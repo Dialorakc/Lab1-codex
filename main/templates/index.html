@@ -1,11 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
         <title>Big Company</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}" id="root">
+        {% block extraStyles %}{% endblock %}
     </head>
-    <body>
+    <body class="{% block bodyClass %}back{% endblock %}">
+        <!-- button to turn on styles -->
+        <div class="btnContainer" style="text-align: right">
+            <button onclick="togglStyle()" class="styleBtn">
+                Style
+            </button>
+        </div>
 
         {% include 'navBar.html' %}
 
@@ -13,6 +23,19 @@
 
         {% endblock %}
 
+        <!-- button js -->
+        <script>
+            function togglStyle(){
+                // this gets all the stylesheets
+                var stylesheet = document.querySelectorAll('link[rel="stylesheet"]')
+                var isDisabled = stylesheet[0].disabled
+
+                // this affects all stylesheets
+                stylesheet.forEach(function(sheet) {
+                    sheet.disabled = !isDisabled
+                })
+            }
+        </script>
     </body>
 </html>
 

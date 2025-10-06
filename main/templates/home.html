@@ -1,25 +1,33 @@
 {% extends 'index.html' %}
 
-
+{% load static %} <!-- style -->
 {% block content %}
 <div>
-    <header>
+    <header class="compHead">
         <h1>Company Homepage</h1>
+        <div class="round"></div>
     </header>
     <section>
-        <p>
-            the current date and time is: (get the date and time)
+        <div class="floatA"></div>
+        <div class="floatB"></div>
+        <div class="floatC"></div>
+        <p class="info">
+        the current date and time is: (get the date and time)
         <br><br>
-            There are 3 items of invertory. <br>
-        <ul>
+        There are 3 items of invertory. <br>
+        <ul class="container">
             {% for item in items %}
-            <li>{{ item }}</li>
+            <div class="cards card-{{ forloop.counter }}">
+                <li>{{ item }}</li>
+            </div>
             {% endfor %}
         </ul>
 
-        <h4>
-            Thank You For Visiting.
-        </h4>
+        <div class="endMsg">
+            <h4>
+                Thank You For Visiting.
+            </h4>
+        </div>
         </p>
     </section>
 </div>
